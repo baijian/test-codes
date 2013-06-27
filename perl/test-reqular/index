@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+open (INFO, "info.txt") or die "can not open file: $!";
+while ( <INFO> ) {
+    chomp;
+    my $info = $_;
+    open (LIST, "list.txt") or die "can not open file: $!";
+    while ( <LIST> ) {
+        chomp;
+        $_ =~ s/\./\\\./g;
+        if ( $info =~ m/$_/) {
+            print $info."\n";
+        }
+    }
+    close LIST;
+}
+close INFO;

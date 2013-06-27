@@ -1,0 +1,3 @@
+com.baijian.test
+com.thank.fask
+com.hoo.foo
