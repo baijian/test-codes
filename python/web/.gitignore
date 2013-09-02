@@ -1,0 +1,5 @@
+*.py[cod]
+.bootstrap/
+.virtualenv/
+script/bootstrap.py
+
