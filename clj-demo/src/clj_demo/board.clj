@@ -29,3 +29,22 @@
   (let [[file rank] pos]
     (board (index file rank))))
 
+
+; block level 封装
+(letfn [(index [file rank]
+          (let [f (- (int file) (int \a))
+                r (* 8 (- 8 (- (int rank) (int \0))))]
+            (+ f r)))]
+  (defn lookup2 [board pos]
+    (let [[file rank] pos]
+      (board (index file rank)))))
+
+
+; 局部分装
+(defn lookup3 [board pos]
+  (let [[file rank] (map int pos)
+        [fc rc] (map int [\a \0])
+        f (- file fc)
+        r (* 8 (- 8 (- rank rc)))
+        index (+ f r)]
+    (board index)))
