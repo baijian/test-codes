@@ -1,5 +1,6 @@
 (ns clj-demo.core
   (:use clj-demo.board)
+  (:require clj-demo.xors)
   (:gen-class))
 
 (defn seq-demo
@@ -35,5 +36,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (prn (clj-demo.board/lookup (clj-demo.board/initial-board) "a1")))
+  (clj-demo.xors/image (clj-demo.xors/xyor 4 4))
+  ;(prn (clj-demo.board/lookup (clj-demo.board/initial-board) "a1"))
+  )
 
