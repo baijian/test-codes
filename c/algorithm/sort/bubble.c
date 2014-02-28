@@ -5,7 +5,7 @@ void bubble_sort(int nums[], int len);
 
 int main(void)
 {
-    int a[10] = {3,4,1,23,2,8,9,6,19,10};   
+    int a[10] = {3,4,1,23,2,8,9,6,19,10};
     bubble_sort(a, 10);
     return 0;
 }
