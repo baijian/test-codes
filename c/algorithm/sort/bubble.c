@@ -25,13 +25,27 @@ void bubble_sort(int nums[], int len)
     print_nums(nums, len);
     int i,j;
     int tmp = 0;
+    int exchange = 0;
+    int second = 0;
+    int flag = 0;
     for (i = 0; i < len; i++) {
-        for (j = len - 1; j > i; j--) {
+        exchange = 0;
+        if (flag > i) {
+            second = flag;
+        } else {
+            second = i;
+        }
+        for (j = len - 1; j > second; j--) {
             if (nums[j] < nums[j - 1]) {
+                exchange = 1;
+                flag = j;
                 tmp = nums[j];
                 nums[j] = nums[j - 1];
                 nums[j - 1] = tmp;
             }
+        }
+        if (exchange == 0) {
+            break;
         }
     }
     printf("After Bubble Sort:\n");
