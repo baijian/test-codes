@@ -13,10 +13,12 @@ int main(void)
     int row2[4][4];
     int mutex;
     int right;
+    int rightnow;
     int j,k;
     for (int i = 0; i < t; i++) {
         mutex = 0;
         right = 0;
+        rightnow = 0;
         fscanf(f1, "%d", &line_num);
         fscanf(f1, "%d", &row[0][0]);
         fscanf(f1, "%d", &row[0][1]);
@@ -52,17 +54,18 @@ int main(void)
         fscanf(f1, "%d", &row2[3][2]);
         fscanf(f1, "%d", &row2[3][3]);
         for (j = 0; j < 4; j++) {
+            right = row[line_num-1][j];
             for (k = 0; k < 4; k++) {
-                right = row[line_num-1][j];
                 if (right == row2[line_num2-1][k]) {
-                    mutex++;
+                    mutex = mutex + 1;
+                    rightnow = right;
                 }
             }
         }
         if (mutex == 0) {
             printf("Case #%d: Volunteer cheated!\n", i+1);//no same
         } else if (mutex == 1)  {
-            printf("Case #%d: %d\n", i+1, right);//one same
+            printf("Case #%d: %d\n", i+1, rightnow);//one same
         } else if (mutex > 1){
             printf("Case #%d: Bad magician!\n", i+1);//more than one same!
         }
