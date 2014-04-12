@@ -3,7 +3,7 @@
 int main(void)
 {
     FILE *f1;
-    f1 = fopen("A-small-attempt0.in", "r");
+    f1 = fopen("A-small-attempt3.in", "r");
     int t;
     fscanf(f1, "%d", &t);
     
